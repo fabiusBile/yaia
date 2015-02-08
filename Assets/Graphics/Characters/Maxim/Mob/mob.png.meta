@@ -1,0 +1,124 @@
+fileFormatVersion: 2
+guid: 73b611325c773494b8fb335be98a689a
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: head
+    21300002: body
+    21300004: leg1
+    21300006: handL1
+    21300008: HandR1
+    21300010: leg2
+    21300012: Hand2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: head
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 73
+        width: 24
+        height: 22
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: body
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 60
+        width: 23
+        height: 36
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: leg1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 35
+        width: 8
+        height: 22
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: handL1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 34
+        width: 9
+        height: 24
+      alignment: 9
+      pivot: {x: .433333933, y: .929167092}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HandR1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 34
+        width: 9
+        height: 24
+      alignment: 9
+      pivot: {x: .631661713, y: .934993923}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: leg2
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 9
+        width: 14
+        height: 23
+      alignment: 9
+      pivot: {x: .685714304, y: .930434942}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hand2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 10
+        width: 6
+        height: 19
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

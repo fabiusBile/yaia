@@ -1,0 +1,157 @@
+fileFormatVersion: 2
+guid: 65e5470493bd448ea9fcdaeebc9fc222
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: player_0
+    21300002: mgun
+    21300004: leg1l
+    21300006: leg1r
+    21300008: handl
+    21300010: leg2l
+    21300012: leg2r
+    21300014: body
+    21300016: head
+    21300018: handr
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: player_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 259
+        width: 120
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mgun
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 186
+        width: 158
+        height: 41
+      alignment: 9
+      pivot: {x: .0139902094, y: .703855217}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: leg1l
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 6
+        width: 1
+        height: 67
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: leg1r
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 7
+        width: 3
+        height: 57
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: handl
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 3
+        width: 4
+        height: 95
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: leg2l
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 6
+        width: 2
+        height: 70
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: leg2r
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 7
+        width: 5
+        height: 54
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: body
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 3
+        width: 2
+        height: 98
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: head
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 122
+        width: 43
+        height: 42
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: handr
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 110
+        width: 80
+        height: 66
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

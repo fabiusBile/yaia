@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: 2b660a7910d8143c4b21316163fd9785
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: head
+    21300002: head01
+    21300004: handR1
+    21300006: body
+    21300008: HandL1
+    21300010: LegR1
+    21300012: LegR1
+    21300014: HandR2
+    21300016: HandL2
+    21300018: LegR2
+    21300020: LegR2
+    21300022: LegL1
+    21300024: LegL2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: head
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 61
+        width: 37
+        height: 34
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: head01
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 62
+        width: 37
+        height: 34
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: handR1
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 34
+        width: 6
+        height: 18
+      alignment: 9
+      pivot: {x: .529999971, y: .829999983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: body
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 12
+        width: 20
+        height: 45
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HandL1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 32
+        width: 6
+        height: 18
+      alignment: 9
+      pivot: {x: .166666672, y: .829999983}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LegR1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 37
+        width: 6
+        height: 22
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LegL1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 37
+        width: 6
+        height: 22
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HandR2
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 11
+        width: 6
+        height: 21
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HandL2
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 9
+        width: 6
+        height: 21
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LegR2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 9
+        width: 11
+        height: 25
+      alignment: 9
+      pivot: {x: .600000024, y: .931999981}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LegL2
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 9
+        width: 11
+        height: 25
+      alignment: 9
+      pivot: {x: .600000024, y: .930000007}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
