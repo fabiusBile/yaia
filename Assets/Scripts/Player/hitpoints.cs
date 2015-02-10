@@ -11,8 +11,9 @@ public class hitpoints : MonoBehaviour
 				Vector3 pos = (Vector3)serialized[1];
 				if (hp > 0){
 						hp -= dmg;
-						SpawnFloatingText sft = new SpawnFloatingText(pos,"-"+dmg+"hp");
-						sft.Spawn();
+						GameObject ft = Resources.Load("FloatingTextPref") as GameObject;
+						GameObject floatText = Instantiate(ft.gameObject,pos,ft.transform.rotation) as GameObject;
+						floatText.GetComponent<FloatingText>().Init(pos,"-"+dmg+"hp");
 				}
 				if (hp <= 0) {
 						if (transform.tag != "Player") {

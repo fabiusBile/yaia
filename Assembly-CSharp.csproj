@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{1D45277B-A47E-F56E-AB7D-9CA29A1739D3}</ProjectGuid>
+	<ProjectGuid>{7A3D6B31-1883-8AFF-B0DD-08D529FCDE20}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -118,7 +118,6 @@
      <Compile Include="Assets\Scripts\Player\weapon_controller.cs" />
      <Compile Include="Assets\Scripts\PlayersData.cs" />
      <Compile Include="Assets\Scripts\Spawn.cs" />
-     <Compile Include="Assets\Scripts\SpawnFloatingText.cs" />
      <Compile Include="Assets\Scripts\backgrounds.cs" />
      <Compile Include="Assets\Scripts\playMenu.cs" />
      <None Include="Assets\Plugins\release_history.txt" />
@@ -128,7 +127,7 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>/Users/Dock/Documents/Яндекс.Диск/Project2/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>/Users/Dock/Documents/Яндекс.Диск/yaia/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

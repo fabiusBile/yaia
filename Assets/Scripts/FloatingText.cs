@@ -3,12 +3,13 @@ using System.Collections;
 
 public class FloatingText : MonoBehaviour {
 	Color clr;
-	public string Text;
 	float multiplayer = 1.01f;
-	// Use this for initialization
-	void Start () {
+	public void Init (Vector2 position, string text) {
+		float rand = Random.Range (-2, 1);
+		transform.position=new Vector2(position.x+rand,position.y+1);
+		renderer.sortingLayerName="Ui";
 		clr=transform.GetComponent<TextMesh>().color;
-		transform.GetComponent<TextMesh>().text=Text;
+		transform.GetComponent<TextMesh>().text=text;
 		GameObject.Destroy(gameObject,1.5f);
 	}
 	void FixedUpdate(){
