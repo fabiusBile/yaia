@@ -12,11 +12,13 @@ public class Characters : MonoBehaviour
 		public GameObject createCharacter;
 		public GameObject characterInfo;
 		PlayersData pd;
+		Inventory inventory;
 
 		// Use this for initialization
 		public void Start ()
 		{
 				pd = GameObject.Find ("PlayersData").GetComponent<PlayersData> ();
+				inventory = pd.gameObject.GetComponent<Inventory> ();
 				charsDoc = new XmlDocument ();
 				try {
 						charsDoc.Load ("Data/characters.xml");
@@ -84,9 +86,11 @@ public class Characters : MonoBehaviour
 				switch (cls) {
 				case "gunslinger":
 						characters [i].Attributes ["weapon"].Value = "mgun";
+						inventory.Add(new Item("mgun","mgun","mgun"));
 						break;
 				case "warrior":
 						characters [i].Attributes ["weapon"].Value = "sword";
+						inventory.Add(new Item("sword","sword","sword"));
 						break;
 				default:
 						characters [i].Attributes ["weapon"].Value = "sword";
