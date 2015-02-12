@@ -21,22 +21,24 @@ public class Characters : MonoBehaviour
 				try {
 						charsDoc.Load ("Data/characters.xml");
 				} catch (FileNotFoundException e) {
-						XmlNode rootNode = charsDoc.CreateElement ("characters");
-						charsDoc.AppendChild (rootNode);
-						XmlNode charNode;
-						for (int i=0; i!=4; i++) {
-								charNode = charsDoc.CreateElement ("char");
-								XmlAttribute name = charsDoc.CreateAttribute ("name");
-								XmlAttribute cls = charsDoc.CreateAttribute ("class");
-								XmlAttribute weapon = charsDoc.CreateAttribute ("weapon");	
-								XmlAttribute id = charsDoc.CreateAttribute ("id");		
-								charNode.Attributes.Append (id);
-								charNode.Attributes.Append (name);
-								charNode.Attributes.Append (cls);
-								charNode.Attributes.Append (weapon);	
-								rootNode.AppendChild (charNode);
+						if (e != null) {
+								XmlNode rootNode = charsDoc.CreateElement ("characters");
+								charsDoc.AppendChild (rootNode);
+								XmlNode charNode;
+								for (int i=0; i!=4; i++) {
+										charNode = charsDoc.CreateElement ("char");
+										XmlAttribute name = charsDoc.CreateAttribute ("name");
+										XmlAttribute cls = charsDoc.CreateAttribute ("class");
+										XmlAttribute weapon = charsDoc.CreateAttribute ("weapon");	
+										XmlAttribute id = charsDoc.CreateAttribute ("id");		
+										charNode.Attributes.Append (id);
+										charNode.Attributes.Append (name);
+										charNode.Attributes.Append (cls);
+										charNode.Attributes.Append (weapon);	
+										rootNode.AppendChild (charNode);
+								}
+								save ();
 						}
-						save ();
 				}
 				characters = charsDoc.GetElementsByTagName ("char");
 				for (int i=0; i!=CharButtons.Length; i++) {
@@ -74,9 +76,9 @@ public class Characters : MonoBehaviour
 						
 		}
 
-		public void submitCharacter (string id,string name, string cls, int i)
+		public void submitCharacter (string id, string name, string cls, int i)
 		{
-				characters [i].Attributes["id"].Value=id;
+				characters [i].Attributes ["id"].Value = id;
 				characters [i].Attributes ["name"].Value = name;
 				characters [i].Attributes ["class"].Value = cls;
 				switch (cls) {
