@@ -6,10 +6,15 @@ using System.IO;
 
 public class Inventory : MonoBehaviour {
 	List<Item> inventory;
+	public string itName;
+	public string itType;
+	public string itSprite;
 	XmlDocument invDoc;
 	void Start(){
-		invDoc = new XmlDocument();
-		Load ();
+		//invDoc = new XmlDocument();
+		//Load ();
+		GameObject weapon = Instantiate (Resources.Load (itType, typeof(GameObject))) as GameObject;
+		weapon.GetComponent<SpriteRenderer>().sprite=Resources.Load(itSprite,typeof(Sprite)) as Sprite;
 	}
 	public void Add (Item item){
 		inventory.Add (item);
