@@ -13,7 +13,7 @@ public class Spawn : MonoBehaviour
 				GameObject ds = GameObject.Find ("PlayersData");
 				pd = ds.GetComponent<PlayersData> ();
 				npd = ds.GetComponent<NetworkPlayersData> ();
-				GameObject myPlayer = PhotonNetwork.Instantiate ("Player", transform.position, transform.rotation, 0);
+				GameObject myPlayer = PhotonNetwork.Instantiate ("Entity/Players/Player", transform.position, transform.rotation, 0);
 				PlayerControl pc = myPlayer.GetComponent<PlayerControl> ();
 				pc.enabled = true;
 				myPlayer.transform.FindChild ("CamMover").gameObject.SetActive (true);

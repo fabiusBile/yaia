@@ -33,7 +33,7 @@ public class PlayerInfo : MonoBehaviour
 
 		void SpawnWeapon ()
 		{
-				GameObject weapon = Instantiate (Resources.Load (weaponName, typeof(GameObject))) as GameObject;
+				GameObject weapon = Instantiate (Resources.Load ("Entity/Weapons/"+weaponName, typeof(GameObject))) as GameObject;
 				weapon.transform.SetParent (WeaponsHandle);
 				weapon.transform.localPosition = Vector3.zero;
 				weapon.transform.localRotation = Quaternion.Euler (Vector3.zero);

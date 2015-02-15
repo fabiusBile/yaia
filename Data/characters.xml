@@ -1,6 +1,14 @@
 <characters>
-  <char id="" name="" class="" weapon="" />
-  <char id="XEqqIy291636" name="CockSucker" class="warrior" weapon="sword" />
-  <char id="pAP]mC301247" name="ываываыва" class="warrior" weapon="sword" />
-  <char id="" name="" class="" weapon="" />
+  <char id="VYl?cx1627" name="CockSucker" class="gunslinger" weapon="mgun">
+    <Item name="mgun" type="mgun" image="Weapons/mgun" />
+  </char>
+  <char id="" name="" class="" weapon="">
+    <Item name="mgun" type="mgun" image="Weapons/mgun" />
+  </char>
+  <char id="" name="" class="" weapon="">
+    <Item name="" type="" image="" />
+  </char>
+  <char id="" name="" class="" weapon="">
+    <Item name="" type="" image="" />
+  </char>
 </characters>

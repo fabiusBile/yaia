@@ -1,1 +1,5 @@
-<Inventory />
+<Inventory>
+  <Item name="mgun" type="mgun" image="Weapons/mgun" />
+  <Item name="System.Xml.XmlAttribute" type="System.Xml.XmlAttribute" image="System.Xml.XmlAttribute" />
+  <Item name="mgun" type="mgun" image="Weapons/mgun" />
+</Inventory>

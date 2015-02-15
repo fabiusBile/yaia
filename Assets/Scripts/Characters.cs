@@ -38,6 +38,9 @@ public class Characters : MonoBehaviour
 										charNode.Attributes.Append (cls);
 										charNode.Attributes.Append (weapon);	
 										rootNode.AppendChild (charNode);
+										XmlNode itemNode = charsDoc.CreateElement ("CurentWeapon");
+										itemNode = Item.GetFields (charsDoc);
+										charNode.AppendChild (itemNode);
 								}
 								save ();
 						}
@@ -65,7 +68,7 @@ public class Characters : MonoBehaviour
 						pd.data ["id"] = characters [i].Attributes ["id"].Value;
 						pd.data ["name"] = characters [i].Attributes ["name"].Value;
 						pd.data ["class"] = characters [i].Attributes ["class"].Value;
-						pd.data ["weapon"] = characters [i].Attributes ["weapon"].Value;
+						pd.data ["weapon"] = characters [i].FirstChild.Attributes ["type"].Value;
 						characterInfo.GetComponent<CharacterInfo> ().i = i;
 						characterInfo.GetComponent<CharacterInfo> ().init (pd.data ["name"].ToString (), pd.data ["class"].ToString ());
 						characterInfo.SetActive (true);
@@ -86,11 +89,15 @@ public class Characters : MonoBehaviour
 				switch (cls) {
 				case "gunslinger":
 						characters [i].Attributes ["weapon"].Value = "mgun";
-						inventory.Add(new Item("mgun","mgun","mgun"));
+						characters [i].FirstChild.Attributes ["name"].Value = "mgun";
+						characters [i].FirstChild.Attributes ["type"].Value = "mgun";
+						characters [i].FirstChild.Attributes ["image"].Value = "Weapons/mgun";
 						break;
 				case "warrior":
 						characters [i].Attributes ["weapon"].Value = "sword";
-						inventory.Add(new Item("sword","sword","sword"));
+						characters [i].FirstChild.Attributes ["name"].Value = "sword";
+						characters [i].FirstChild.Attributes ["type"].Value = "sword";
+						characters [i].FirstChild.Attributes ["image"].Value = "Weapons/sword";
 						break;
 				default:
 						characters [i].Attributes ["weapon"].Value = "sword";

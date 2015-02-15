@@ -45,7 +45,7 @@ public class Lobby : MonoBehaviour
 				if (PhotonNetwork.connected) {
 						lobbyname.text = PhotonNetwork.room.name;
 						startBtn.SetActive (PhotonNetwork.isMasterClient);
-						myPlayer = PhotonNetwork.Instantiate ("TavernPlayer", Vector3.zero, transform.rotation, 0);
+						myPlayer = PhotonNetwork.Instantiate ("Entity/PLayers/TavernPlayer", Vector3.zero, transform.rotation, 0);
 						DontDestroyOnLoad (myPlayer);
 						if (PhotonNetwork.isMasterClient) {
 								npd.Add (pd);
