@@ -31,12 +31,10 @@ public class Characters : MonoBehaviour
 										charNode = charsDoc.CreateElement ("char");
 										XmlAttribute name = charsDoc.CreateAttribute ("name");
 										XmlAttribute cls = charsDoc.CreateAttribute ("class");
-										XmlAttribute weapon = charsDoc.CreateAttribute ("weapon");	
 										XmlAttribute id = charsDoc.CreateAttribute ("id");		
 										charNode.Attributes.Append (id);
 										charNode.Attributes.Append (name);
 										charNode.Attributes.Append (cls);
-										charNode.Attributes.Append (weapon);	
 										rootNode.AppendChild (charNode);
 										XmlNode itemNode = charsDoc.CreateElement ("CurentWeapon");
 										itemNode = Item.GetFields (charsDoc);
@@ -69,6 +67,7 @@ public class Characters : MonoBehaviour
 						pd.data ["name"] = characters [i].Attributes ["name"].Value;
 						pd.data ["class"] = characters [i].Attributes ["class"].Value;
 						pd.data ["weapon"] = characters [i].FirstChild.Attributes ["type"].Value;
+						pd.data ["weaponSprite"] = characters [i].FirstChild.Attributes ["image"].Value;
 						characterInfo.GetComponent<CharacterInfo> ().i = i;
 						characterInfo.GetComponent<CharacterInfo> ().init (pd.data ["name"].ToString (), pd.data ["class"].ToString ());
 						characterInfo.SetActive (true);
@@ -88,19 +87,19 @@ public class Characters : MonoBehaviour
 				characters [i].Attributes ["class"].Value = cls;
 				switch (cls) {
 				case "gunslinger":
-						characters [i].Attributes ["weapon"].Value = "mgun";
 						characters [i].FirstChild.Attributes ["name"].Value = "mgun";
 						characters [i].FirstChild.Attributes ["type"].Value = "mgun";
 						characters [i].FirstChild.Attributes ["image"].Value = "Weapons/mgun";
 						break;
 				case "warrior":
-						characters [i].Attributes ["weapon"].Value = "sword";
 						characters [i].FirstChild.Attributes ["name"].Value = "sword";
 						characters [i].FirstChild.Attributes ["type"].Value = "sword";
 						characters [i].FirstChild.Attributes ["image"].Value = "Weapons/sword";
 						break;
 				default:
-						characters [i].Attributes ["weapon"].Value = "sword";
+						characters [i].FirstChild.Attributes ["name"].Value = "mgun";
+						characters [i].FirstChild.Attributes ["type"].Value = "mgun";
+						characters [i].FirstChild.Attributes ["image"].Value = "Weapons/mgun";
 						break;
 				}
 				save ();

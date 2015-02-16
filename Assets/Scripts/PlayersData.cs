@@ -13,15 +13,17 @@ public class PlayersData : MonoBehaviour
 				data.Add ("name", "");
 				data.Add ("class", "");
 				data.Add ("weapon", "");
+				data.Add ("weaponSprite", "");
 				DontDestroyOnLoad (gameObject);
 		}
 		
-		public PlayersData (string id, string name, string cls, string weapon)
+		public PlayersData (string id, string name, string cls, string weapon, string weaponSprite)
 		{
 				data ["id"] = id;
 				data ["name"] = name;
 				data ["class"] = cls;
 				data ["weapon"] = weapon;
+				data ["weaponSprite"] = weaponSprite;
 		}
 
 		public PlayersData (object[] recievedData)
@@ -31,6 +33,7 @@ public class PlayersData : MonoBehaviour
 				data.Add ("name", recievedData [1].ToString ());
 				data.Add ("class", recievedData [2].ToString ());
 				data.Add ("weapon", recievedData [3].ToString ());
+				data.Add ("weaponSprite", recievedData [4].ToString ());
 		}
 
 		public object[] GetArray ()
@@ -40,6 +43,7 @@ public class PlayersData : MonoBehaviour
 				arr [1] = data ["name"];
 				arr [2] = data ["class"];
 				arr [3] = data ["weapon"];
+				arr [4] = data ["weaponSprite"];	
 				return arr;
 		}
 }

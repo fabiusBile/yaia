@@ -1,14 +1,14 @@
 <characters>
-  <char id="VYl?cx1627" name="CockSucker" class="gunslinger" weapon="mgun">
+  <char id="N4gxLx161428" name="CockSucker" class="gunslinger">
     <Item name="mgun" type="mgun" image="Weapons/mgun" />
   </char>
-  <char id="" name="" class="" weapon="">
-    <Item name="mgun" type="mgun" image="Weapons/mgun" />
+  <char id="DVI&gt;6T161512" name="DickLicker" class="warrior">
+    <Item name="sword" type="sword" image="Weapons/sword" />
   </char>
-  <char id="" name="" class="" weapon="">
-    <Item name="" type="" image="" />
+  <char id="?fE=Up161430" name="kjhkjh" class="warrior">
+    <Item name="sword" type="sword" image="Weapons/sword" />
   </char>
-  <char id="" name="" class="" weapon="">
+  <char id="" name="" class="">
     <Item name="" type="" image="" />
   </char>
 </characters>

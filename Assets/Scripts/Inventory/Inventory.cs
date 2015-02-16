@@ -6,9 +6,6 @@ using System.IO;
 
 public class Inventory : MonoBehaviour {
 	List<Item> inventory;
-	public string itName;
-	public string itType;
-	public string itSprite;
 	XmlDocument invDoc;
 	void Start(){
 		invDoc = new XmlDocument();
@@ -26,7 +23,7 @@ public class Inventory : MonoBehaviour {
 	}
 	void Load(){
 		inventory = new List<Item> ();
-		try {
+		try { 
 			invDoc.Load ("Data/inventory.xml");
 		} catch (FileNotFoundException e) {
 			if (e!=null){
