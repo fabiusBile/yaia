@@ -12,13 +12,11 @@ public class Characters : MonoBehaviour
 		public GameObject createCharacter;
 		public GameObject characterInfo;
 		PlayersData pd;
-		Inventory inventory;
 
 		// Use this for initialization
 		public void Start ()
 		{
 				pd = GameObject.Find ("PlayersData").GetComponent<PlayersData> ();
-				inventory = pd.gameObject.GetComponent<Inventory> ();
 				charsDoc = new XmlDocument ();
 				try {
 						charsDoc.Load ("Data/characters.xml");

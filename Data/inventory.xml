@@ -1,1 +1,7 @@
-<Inventory />
+<Inventory>
+  <Item name="Mgun" type="mgun" image="Weapons/mgun" />
+  <Item name="Mgun" type="mgun" image="Weapons/mgun" />
+  <Item name="Mgun" type="mgun" image="Weapons/mgun" />
+  <Item name="Mgun" type="mgun" image="Weapons/mgun" />
+  <Item name="Mgun" type="mgun" image="Weapons/mgun" />
+</Inventory>

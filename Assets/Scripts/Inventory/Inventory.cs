@@ -3,10 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using System.IO;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour {
 	List<Item> inventory;
 	XmlDocument invDoc;
+	public RectTransform grid;
+	public RectTransform lobby;
+	public GameObject item;
+	void OnGUI(){
+		if (GUI.Button(new Rect(0,0,200,20),"add")){
+			Add(new Item("Mgun","mgun","Weapons/mgun"));
+			Save();
+		}
+	}
+	public void ToggleLobby(){
+		lobby.localScale = lobby.localScale == Vector3.one ? lobby.localScale = Vector3.zero : Vector3.one;
+	}
+
 	void Start(){
 		invDoc = new XmlDocument();
 		Load ();
@@ -15,11 +29,15 @@ public class Inventory : MonoBehaviour {
 	}
 	public void Add (Item item){
 		inventory.Add (item);
-		Save ();
 	}
 	public void Remove(int i){
 		inventory.RemoveAt (i);
-		Save ();
+	}
+	public void showInventory(){
+		foreach (Item i in inventory){
+			GameObject itm = Instantiate(item) as GameObject;
+			itm.transform.SetParent(grid);
+		}
 	}
 	void Load(){
 		inventory = new List<Item> ();
@@ -36,7 +54,7 @@ public class Inventory : MonoBehaviour {
 			inventory.Add(new Item(item.Attributes["name"].ToString(),item.Attributes["type"].ToString(),item.Attributes["image"].ToString()));
 		}
 	}
-	void Save(){
+	public void Save(){
 		foreach (Item item in inventory){
 			XmlNode itemNode = invDoc.CreateElement("Item");
 //			itemNode.Attributes.Append(invDoc.CreateAttribute("name"));
