@@ -11,6 +11,7 @@ public class Inventory : MonoBehaviour {
 	public RectTransform grid;
 	public RectTransform lobby;
 	public GameObject item;
+	public Item curentItem;
 	void OnGUI(){
 		if (GUI.Button(new Rect(0,0,200,20),"add")){
 			Add(new Item("Mgun","mgun","Weapons/mgun"));
@@ -37,6 +38,10 @@ public class Inventory : MonoBehaviour {
 		foreach (Item i in inventory){
 			GameObject itm = Instantiate(item) as GameObject;
 			itm.transform.SetParent(grid);
+			Sprite[] image = Resources.LoadAll<Sprite>("Sprites/Weapons/player");
+			itm.transform.GetChild(0).GetComponent<Image>().sprite=image[8];
+			itm.transform.GetChild(1).GetComponent<Text>().text=itm.name;
+			Debug.Log(itm.transform.GetChild(0).GetComponent<Image>().sprite);
 		}
 	}
 	void Load(){
@@ -51,7 +56,7 @@ public class Inventory : MonoBehaviour {
 			}
 		}
 		foreach (XmlNode item in invDoc.FirstChild.ChildNodes){
-			inventory.Add(new Item(item.Attributes["name"].ToString(),item.Attributes["type"].ToString(),item.Attributes["image"].ToString()));
+			inventory.Add(new Item(item.Attributes["name"].Value.ToString(),item.Attributes["type"].Value.ToString(),item.Attributes["image"].Value.ToString()));
 		}
 	}
 	public void Save(){
