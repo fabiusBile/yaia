@@ -2,13 +2,13 @@
 using System.Collections;
 using System.Xml;
 public class Item {
-	public  string name;
+	public  string itName;
 	public  string type;
 	public  string image;
 	static XmlNode item;
 
 	public Item (string name,string type, string image){
-		this.name = name;
+		this.itName = name;
 		this.type = type;
 		this.image = image;
 	}
@@ -21,7 +21,7 @@ public class Item {
 	}
 	public XmlNode GetXml(XmlDocument doc){
 		item = doc.CreateElement ("Item");
-		AddAtr (doc,"name",name);
+		AddAtr (doc,"name",itName);
 		AddAtr (doc,"type",type);
 		AddAtr (doc,"image",image);
 		return item;

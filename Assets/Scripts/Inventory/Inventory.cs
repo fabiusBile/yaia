@@ -14,7 +14,7 @@ public class Inventory : MonoBehaviour {
 	public Item curentItem;
 	void OnGUI(){
 		if (GUI.Button(new Rect(0,0,200,20),"add")){
-			Add(new Item("Mgun","mgun","Weapons/mgun"));
+			Add(new Item("Sword","sword","Weapons/sword"));
 			Save();
 		}
 	}
@@ -40,7 +40,7 @@ public class Inventory : MonoBehaviour {
 			itm.transform.SetParent(grid);
 			Sprite[] image = Resources.LoadAll<Sprite>("Sprites/Weapons/player");
 			itm.transform.GetChild(0).GetComponent<Image>().sprite=image[8];
-			itm.transform.GetChild(1).GetComponent<Text>().text=itm.name;
+			itm.transform.GetChild(1).GetComponent<Text>().text=i.itName;
 			Debug.Log(itm.transform.GetChild(0).GetComponent<Image>().sprite);
 		}
 	}
@@ -62,12 +62,6 @@ public class Inventory : MonoBehaviour {
 	public void Save(){
 		foreach (Item item in inventory){
 			XmlNode itemNode = invDoc.CreateElement("Item");
-//			itemNode.Attributes.Append(invDoc.CreateAttribute("name"));
-//			itemNode.Attributes.Append(invDoc.CreateAttribute("type"));
-//			itemNode.Attributes.Append(invDoc.CreateAttribute("image"));
-//			itemNode.Attributes["name"].Value=item.name;
-//			itemNode.Attributes["type"].Value=item.type;
-//			itemNode.Attributes["image"].Value=item.image;
 			itemNode=item.GetXml(invDoc);
 			invDoc.FirstChild.AppendChild(itemNode);
 		}

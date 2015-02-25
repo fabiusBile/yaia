@@ -1,2 +1,2 @@
-./Library/metadata/*
-./Temp/*
+metadata/
+Temp/
