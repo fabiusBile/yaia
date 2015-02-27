@@ -31,8 +31,10 @@ public class Inventory : MonoBehaviour {
 	public void Add (Item item){
 		inventory.Add (item);
 	}
-	public void Remove(int i){
+	public Item Take(int i){
+		Item it = inventory[i];
 		inventory.RemoveAt (i);
+		return it;
 	}
 	public void showInventory(){
 		foreach (Item i in inventory){

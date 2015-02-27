@@ -8,18 +8,11 @@ public class NetworkPlayersData : MonoBehaviour
 		void Awake ()
 		{
 				npd = new Hashtable (4);
-				debug=new string[5];
 		}
 
 		public void Add (PlayersData pd)
 		{
 				npd.Add (pd.data["id"],pd);
-				PlayersData debugData = pd;
-				debug[0]=debugData.data["id"].ToString();
-				debug[1]=debugData.data["name"].ToString();
-				debug[2]=debugData.data["class"].ToString();
-				debug[3]=debugData.data["weapon"].ToString();
-				debug[4]=debugData.data["weaponSprite"].ToString();
 		}
 		
 		public PlayersData Get (string name)

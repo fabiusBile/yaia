@@ -5,25 +5,18 @@ public class PlayersData : MonoBehaviour
 {
 		public int i;
 		public Hashtable data;
-
-		void Awake ()
-		{
-				data = new Hashtable ();
-				data.Add ("id", "");
-				data.Add ("name", "");
-				data.Add ("class", "");
-				data.Add ("weapon", "");
-				data.Add ("weaponSprite", "");
-				DontDestroyOnLoad (gameObject);
-		}
+		public Item CurentWeapon;
 		
-		public PlayersData (string id, string name, string cls, string weapon, string weaponSprite)
+		public PlayersData (string id, string name, string cls, Item weapon)
 		{
-				data ["id"] = id;
-				data ["name"] = name;
-				data ["class"] = cls;
-				data ["weapon"] = weapon;
-				data ["weaponSprite"] = weaponSprite;
+				data = new Hashtable();	
+				Debug.Log(id);
+				data.Add ("id",id);
+				data.Add ("name", name);
+				data.Add ("class", cls);
+				data.Add ("weapon", weapon.serialize());
+				CurentWeapon = weapon;
+				Debug.Log(CurentWeapon.itName);
 		}
 
 		public PlayersData (object[] recievedData)
@@ -32,8 +25,8 @@ public class PlayersData : MonoBehaviour
 				data.Add ("id", recievedData [0].ToString ());
 				data.Add ("name", recievedData [1].ToString ());
 				data.Add ("class", recievedData [2].ToString ());
-				data.Add ("weapon", recievedData [3].ToString ());
-				data.Add ("weaponSprite", recievedData [4].ToString ());
+				data.Add ("weapon", recievedData [3]);
+				CurentWeapon = recievedData[3] as Item;
 		}
 
 		public object[] GetArray ()
@@ -43,7 +36,6 @@ public class PlayersData : MonoBehaviour
 				arr [1] = data ["name"];
 				arr [2] = data ["class"];
 				arr [3] = data ["weapon"];
-				arr [4] = data ["weaponSprite"];	
 				return arr;
 		}
 }

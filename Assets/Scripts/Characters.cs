@@ -61,11 +61,16 @@ public class Characters : MonoBehaviour
 		{
 				bool empty = characters [i].Attributes ["name"].Value == "" ? true : false;
 				if (!empty) {
-						pd.data ["id"] = characters [i].Attributes ["id"].Value;
-						pd.data ["name"] = characters [i].Attributes ["name"].Value;
-						pd.data ["class"] = characters [i].Attributes ["class"].Value;
-						pd.data ["weapon"] = characters [i].FirstChild.Attributes ["type"].Value;
-						pd.data ["weaponSprite"] = characters [i].FirstChild.Attributes ["image"].Value;
+//						pd.data ["id"] = characters [i].Attributes ["id"].Value;
+//						pd.data ["name"] = characters [i].Attributes ["name"].Value;
+//						pd.data ["class"] = characters [i].Attributes ["class"].Value;
+						Item weapon = new Item (charsDoc,characters[i].FirstChild);
+//						Debug.Log (weapon.itName);
+//						pd.CurentWeapon=weapon;
+			XmlAttributeCollection atrs = characters[i].Attributes;
+			string id = characters[i].Attributes["id"].Value;
+			Debug.Log (id);
+			pd = new PlayersData(id,atrs["name"].Value,atrs["class"].Value,weapon);
 						characterInfo.GetComponent<CharacterInfo> ().i = i;
 						characterInfo.GetComponent<CharacterInfo> ().init (pd.data ["name"].ToString (), pd.data ["class"].ToString ());
 						characterInfo.SetActive (true);
