@@ -11,12 +11,12 @@ public class Characters : MonoBehaviour
 		XmlDocument charsDoc;
 		public GameObject createCharacter;
 		public GameObject characterInfo;
-		PlayersData pd;
+		NetworkPlayersData npd;
 
 		// Use this for initialization
 		public void Start ()
 		{
-				pd = GameObject.Find ("PlayersData").GetComponent<PlayersData> ();
+				npd = GameObject.Find ("PlayersData").GetComponent<NetworkPlayersData> ();
 				charsDoc = new XmlDocument ();
 				try {
 						charsDoc.Load ("Data/characters.xml");
@@ -70,9 +70,9 @@ public class Characters : MonoBehaviour
 			XmlAttributeCollection atrs = characters[i].Attributes;
 			string id = characters[i].Attributes["id"].Value;
 			Debug.Log (id);
-			pd = new PlayersData(id,atrs["name"].Value,atrs["class"].Value,weapon);
+			npd.localPd = new PlayersData(id,atrs["name"].Value,atrs["class"].Value,weapon);
 						characterInfo.GetComponent<CharacterInfo> ().i = i;
-						characterInfo.GetComponent<CharacterInfo> ().init (pd.data ["name"].ToString (), pd.data ["class"].ToString ());
+			characterInfo.GetComponent<CharacterInfo> ().init (npd.localPd.data ["name"].ToString (), npd.localPd.data ["class"].ToString ());
 						characterInfo.SetActive (true);
 						gameObject.SetActive (false);
 				} else {

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayersData : MonoBehaviour
+public class PlayersData
 {
 		public int i;
 		public Hashtable data;
@@ -10,13 +10,11 @@ public class PlayersData : MonoBehaviour
 		public PlayersData (string id, string name, string cls, Item weapon)
 		{
 				data = new Hashtable();	
-				Debug.Log(id);
 				data.Add ("id",id);
 				data.Add ("name", name);
 				data.Add ("class", cls);
 				data.Add ("weapon", weapon.serialize());
 				CurentWeapon = weapon;
-				Debug.Log(CurentWeapon.itName);
 		}
 
 		public PlayersData (object[] recievedData)

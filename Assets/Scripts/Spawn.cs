@@ -11,8 +11,8 @@ public class Spawn : MonoBehaviour
 		void Start ()
 		{
 				GameObject ds = GameObject.Find ("PlayersData");
-				pd = ds.GetComponent<PlayersData> ();
 				npd = ds.GetComponent<NetworkPlayersData> ();
+				pd = npd.localPd;
 				GameObject myPlayer = PhotonNetwork.Instantiate ("Entity/Players/Player", transform.position, transform.rotation, 0);
 				PlayerControl pc = myPlayer.GetComponent<PlayerControl> ();
 				pc.enabled = true;

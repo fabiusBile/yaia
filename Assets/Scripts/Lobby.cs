@@ -15,6 +15,7 @@ public class Lobby : MonoBehaviour
 		public Transform[] Seats;
 		public Text[] Labels;
 		GameObject myPlayer;
+		GameObject ds;
 
 //		void OnGUI ()
 //		{
@@ -29,15 +30,15 @@ public class Lobby : MonoBehaviour
 		
 		void Awake ()
 		{
-				GameObject ds = GameObject.Find ("PlayersData");
-				pd = ds.GetComponent<PlayersData> ();
-				npd = ds.GetComponent<NetworkPlayersData> ();
+				ds = GameObject.Find ("PlayersData");
 				pv = gameObject.GetComponent<PhotonView> ();
 				PlayerPrefs.SetInt ("Single", 0);
 		}
 
 		void OnEnable ()
 		{
+				npd = ds.GetComponent<NetworkPlayersData> ();
+				pd = npd.localPd;
 				PhotonNetwork.offlineMode = PlayerPrefs.GetInt ("Single") == 1 ? true : false;
 				if (PhotonNetwork.offlineMode)
 						PhotonNetwork.CreateRoom (null);

@@ -14,8 +14,8 @@ public class PlayerInfo : MonoBehaviour
 		void Start ()
 		{
 				GameObject ds = GameObject.Find ("PlayersData");
-				pd = ds.GetComponent<PlayersData> ();
 				npd = ds.GetComponent<NetworkPlayersData> ();
+				pd = npd.localPd;
 				if (gameObject.GetComponent<PhotonView> ().isMine) {
 						name = pd.data ["name"].ToString ();
 						cls = pd.data ["class"].ToString ();
