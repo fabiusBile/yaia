@@ -28,8 +28,8 @@ public class PlayerInfo : MonoBehaviour
 						PlayersData otherPd = npd.Get (gameObject.GetComponent<PhotonView> ().owner.name);
 						name = otherPd.data ["name"].ToString ();
 						cls = otherPd.data ["class"].ToString ();
-						weaponName = otherPd.data ["weapon"].ToString ();
-						weaponSprite = Resources.Load("Sprites/"+otherPd.data["weaponSprite"],typeof(Sprite)) as Sprite;
+						weaponName = otherPd.CurentWeapon.itName;
+						weaponSprite = Resources.Load("Sprites/"+otherPd.CurentWeapon.image,typeof(Sprite)) as Sprite;
 						SpawnWeapon();
 				}
 
