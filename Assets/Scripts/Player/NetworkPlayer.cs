@@ -36,29 +36,28 @@ public class NetworkPlayer : MonoBehaviour {
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info){
 
 		if (stream.isWriting) { //Текущий игрок
-			stream.SendNext(transform.position); //Отправляем данные другим игрокам
-			stream.SendNext(transform.rotation);
-			stream.SendNext(pl.dir);
-			stream.SendNext(dir);
-			stream.SendNext(anim.GetFloat("Speed"));
-			stream.SendNext(pl.jump);
-			stream.SendNext(hp.hp);
+			stream.SendNext(transform.position); 	//Положение
+			stream.SendNext(transform.rotation); 	//Поворот
+			stream.SendNext(pl.dir);			 	//Поворт рук
+			stream.SendNext(dir);					//Направление 
+			stream.SendNext(anim.GetFloat("Speed"));//Скорость для анимации
+			stream.SendNext(pl.jump);				//Прыжок дл анимации
+			stream.SendNext(hp.hp);					//хп
 		}
 		if (stream.isReading) { //Мультиплеерный игрок
-
-			realPosition=(Vector3)stream.ReceiveNext(); //Получаем данные от игрока
-			realRotation=(Quaternion)stream.ReceiveNext();
-			realLookAngle=(Vector3)stream.ReceiveNext();
-			dir = (float)stream.ReceiveNext();
+			realPosition=(Vector3)stream.ReceiveNext(); 		//
+			realRotation=(Quaternion)stream.ReceiveNext();		//
+			realLookAngle=(Vector3)stream.ReceiveNext();		//
+			dir = (float)stream.ReceiveNext();					//
 			Vector3 localScale = transform.localScale;
 			localScale.x=dir;
 			transform.localScale=localScale;
 			if (anim==null)anim=GetComponent<Animator>();
-			anim.SetFloat("Speed",(float)stream.ReceiveNext());
-			bool j = (bool)stream.ReceiveNext();
+			anim.SetFloat("Speed",(float)stream.ReceiveNext());	//
+			bool j = (bool)stream.ReceiveNext();				//
 			anim.SetBool("Jump",j);
-			if (hp==null)hp=GetComponent<hitpoints>();
-			hp.hp=(float)stream.ReceiveNext();
+			if (hp==null)hp=GetComponent<hitpoints>();			//
+			hp.hp=(float)stream.ReceiveNext();					//
 		}
 	}
 }

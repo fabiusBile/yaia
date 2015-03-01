@@ -14,7 +14,7 @@ public class PlayersData
 				data.Add ("name", name);
 				data.Add ("class", cls);
 				data.Add ("weapon", weapon.serialize());
-				CurentWeapon = weapon;
+				CurentWeapon = new Item( data["weapon"] as object[]);
 		}
 
 		public PlayersData (object[] recievedData)
@@ -24,7 +24,7 @@ public class PlayersData
 				data.Add ("name", recievedData [1].ToString ());
 				data.Add ("class", recievedData [2].ToString ());
 				data.Add ("weapon", recievedData [3]);
-				CurentWeapon = recievedData[3] as Item;
+				CurentWeapon = new Item(recievedData[3] as object[]);
 		}
 
 		public object[] GetArray ()

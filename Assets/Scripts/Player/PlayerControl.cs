@@ -21,10 +21,9 @@ public class PlayerControl : MonoBehaviour
 		private bool grounded = false;			// Whether or not the player is grounded.
 		private Animator anim;					// Reference to the player's animator component.
 		public Camera cam;
-		public Transform wc;
-		weapon_controller wp;
+		public weapon_controller wc;
 		public Transform foresight;
-		public Transform lHandle;
+		//public Transform lHandle;
 		public bool stunned = false;
 		public float useRadius = 3f;
 		public float unstAm = 0;
@@ -47,12 +46,11 @@ public class PlayerControl : MonoBehaviour
 		public bool AttackCharging;
 		public bool AttackCharged;
 
-		void Start ()
+		void Awake ()
 		{
 				// Setting up references.
 				groundCheck = transform.Find ("groundCheck");
 				anim = GetComponent<Animator> ();
-				wp = wc.GetComponent<weapon_controller> ();
 				anim.SetBool ("Jump", false);
 				anim.SetBool ("Stunned", false);
 				Hp = transform.GetComponent<hitpoints> ();
@@ -232,13 +230,13 @@ public class PlayerControl : MonoBehaviour
 		[RPC]
 		void Fire (bool f)
 		{
-				wp.fire = f;
+				wc.fire = f;
 		}
 
 		[RPC]
 		void Fire2 (bool f)
 		{
-				wp.fire2 = f;
+				wc.fire2 = f;
 		}
 
 		public bool facing ()
@@ -278,8 +276,8 @@ public class PlayerControl : MonoBehaviour
 		{
 				stunned = true;
 				anim.SetBool ("Stunned", true);
-				wp.fire = false;
-				wp.fire2 = false;
+				wc.fire = false;
+				wc.fire2 = false;
 				gameObject.layer = LayerMask.NameToLayer ("Items");
 				
 		}
