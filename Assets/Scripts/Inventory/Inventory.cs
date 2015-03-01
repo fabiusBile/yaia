@@ -11,7 +11,9 @@ public class Inventory : MonoBehaviour {
 	public RectTransform grid;
 	public RectTransform lobby;
 	public GameObject item;
-	public Item curentItem;
+	public NetworkPlayersData npd;
+	public Transform curItemSlot;
+
 	void OnGUI(){
 		if (GUI.Button(new Rect(0,0,200,20),"add")){
 			Add(new Item("Sword","sword","Weapons/sword"));
@@ -36,14 +38,20 @@ public class Inventory : MonoBehaviour {
 		inventory.RemoveAt (i);
 		return it;
 	}
+	void setCurItem (Item itm){
+			Debug.Log (itm.itName);
+			Sprite[] image = Resources.LoadAll<Sprite>("Sprites/Weapons/player");
+			curItemSlot.transform.GetChild(0).GetComponent<Image>().sprite=image[8];
+			curItemSlot.transform.GetChild(1).GetComponent<Text>().text=itm.itName;
+	}
 	public void showInventory(){
+		setCurItem (npd.localPd.CurentWeapon);
 		foreach (Item i in inventory){
 			GameObject itm = Instantiate(item) as GameObject;
 			itm.transform.SetParent(grid);
 			Sprite[] image = Resources.LoadAll<Sprite>("Sprites/Weapons/player");
 			itm.transform.GetChild(0).GetComponent<Image>().sprite=image[8];
 			itm.transform.GetChild(1).GetComponent<Text>().text=i.itName;
-			Debug.Log(itm.transform.GetChild(0).GetComponent<Image>().sprite);
 		}
 	}
 	void Load(){
