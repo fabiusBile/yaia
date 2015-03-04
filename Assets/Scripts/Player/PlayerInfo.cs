@@ -21,14 +21,14 @@ public class PlayerInfo : MonoBehaviour
 						cls = pd.data ["class"].ToString ();
 						//Item weapon = pd.data["weapon"] as Item;
 						
-						weaponName = pd.CurentWeapon.itName;
+						weaponName = pd.CurentWeapon.type;
 						weaponSprite = Resources.Load("Sprites/"+pd.CurentWeapon.image,typeof(Sprite)) as Sprite;
 						SpawnWeapon();
 				} else {
 						PlayersData otherPd = npd.Get (gameObject.GetComponent<PhotonView> ().owner.name);
 						name = otherPd.data ["name"].ToString ();
 						cls = otherPd.data ["class"].ToString ();
-						weaponName = otherPd.CurentWeapon.itName;
+						weaponName = otherPd.CurentWeapon.type;
 						weaponSprite = Resources.Load("Sprites/"+otherPd.CurentWeapon.image,typeof(Sprite)) as Sprite;
 						SpawnWeapon();
 				}
