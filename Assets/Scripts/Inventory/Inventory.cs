@@ -49,6 +49,7 @@ public class Inventory : MonoBehaviour {
 		for (int i=0;i!=inventory.Count;i++){
 			ShowItem(inventory[i],i);
 		}
+		grid.GetComponent<InventoryCellsScaler> ().OnEnable ();
 	}
 	void ShowItem(Item i,int n){
 		GameObject itm = Instantiate(item) as GameObject;
@@ -61,6 +62,8 @@ public class Inventory : MonoBehaviour {
 			setCurItem(Take(n));
 			ShowItem(inventory[inventory.Count-1],inventory.Count-1);
 			npd.localPd.CurentWeapon=i;
+			Debug.Log(itm.GetComponent<RectTransform>().rect.width);
+			itm.transform.localScale=Vector3.one;
 			GameObject.Destroy(itm);
 		});
 	}
@@ -88,5 +91,8 @@ public class Inventory : MonoBehaviour {
 			invDoc.FirstChild.AppendChild(itemNode);
 		}
 		invDoc.Save("Data/inventory.xml");
+		for (int i=0; i!=grid.childCount; i++) {
+			GameObject.Destroy(grid.GetChild(i).gameObject);
+		}
 	}
 }

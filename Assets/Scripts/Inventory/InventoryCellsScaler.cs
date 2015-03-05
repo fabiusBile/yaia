@@ -2,20 +2,14 @@
 using System.Collections;
 using UnityEngine.UI;
 public class InventoryCellsScaler : MonoBehaviour {
-	void OnEnable () {
+	public	void OnEnable () {
 		GridLayoutGroup	grid = GetComponent<GridLayoutGroup> ();
-		Rect rect = GetComponent<RectTransform> ().rect;
-		grid.cellSize = new Vector2 (rect.size.x / 20f,rect.size.x/20f);
-		grid.spacing = grid.cellSize * 3f;
-		grid.padding.top = Mathf.RoundToInt(grid.cellSize.y*1.5f);
-		grid.padding.bottom = grid.padding.top;
-		grid.padding.left = grid.padding.top;
-		grid.padding.right = grid.padding.top;
-		GetComponentInParent<ScrollRect> ().verticalScrollbar.value = 0;
-	}
-	void OnDisable(){
-		for (int i=0; i!=transform.childCount; i++) {
-			GameObject.Destroy(transform.GetChild(i).gameObject);
-		}
+		Rect gridRect = GetComponent<RectTransform> ().rect;
+		if (transform.childCount > 0) {
+						Rect cellRect = transform.GetChild (0).GetComponent<RectTransform> ().rect;
+						float scale = transform.GetChild(0).localScale.x;
+						int count = Mathf.RoundToInt ((gridRect.width) / cellRect.width/scale);
+						grid.childAlignment = transform.childCount>=count ? TextAnchor.UpperCenter : TextAnchor.UpperLeft;
+				}
 	}
 }

@@ -8,9 +8,4 @@
   <Item name="Sword" type="sword" image="Weapons/sword" />
   <Item name="Sword" type="sword" image="Weapons/sword" />
   <Item name="Sword" type="sword" image="Weapons/sword" />
-  <Item name="Sword" type="sword" image="Weapons/sword" />
-  <Item name="Sword" type="sword" image="Weapons/sword" />
-  <Item name="Sword" type="sword" image="Weapons/sword" />
-  <Item name="sword" type="sword" image="Weapons/sword" />
-  <Item name="mgun" type="mgun" image="Weapons/mgun" />
 </Inventory>
