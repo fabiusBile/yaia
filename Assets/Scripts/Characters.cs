@@ -69,8 +69,9 @@ public class Characters : MonoBehaviour
 //						pd.CurentWeapon=weapon;
 			XmlAttributeCollection atrs = characters[i].Attributes;
 			string id = characters[i].Attributes["id"].Value;
-			Debug.Log (id);
+
 			npd.localPd = new PlayersData(id,atrs["name"].Value,atrs["class"].Value,weapon);
+			npd.localPd.i=i;
 						characterInfo.GetComponent<CharacterInfo> ().i = i;
 			characterInfo.GetComponent<CharacterInfo> ().init (npd.localPd.data ["name"].ToString (), npd.localPd.data ["class"].ToString ());
 						characterInfo.SetActive (true);
@@ -107,7 +108,13 @@ public class Characters : MonoBehaviour
 				}
 				save ();
 		}
-
+		
+		public void ChangeCurWeapon(int i, Item itm){
+			characters [i].FirstChild.Attributes ["name"].Value = itm.itName;
+			characters [i].FirstChild.Attributes ["type"].Value = itm.type;
+			characters [i].FirstChild.Attributes ["image"].Value = itm.image;
+			save ();
+		}
 		public void delete (int i)
 		{
 				foreach (XmlAttribute atr in characters[i].Attributes)

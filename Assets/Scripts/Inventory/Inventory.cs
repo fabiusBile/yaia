@@ -13,6 +13,7 @@ public class Inventory : MonoBehaviour {
 	public GameObject item;
 	public NetworkPlayersData npd;
 	public Transform curItemSlot;
+	public Characters characters;
 
 	void OnGUI(){
 		if (GUI.Button(new Rect(0,0,200,20),"add")){
@@ -43,6 +44,7 @@ public class Inventory : MonoBehaviour {
 			Sprite[] image = Resources.LoadAll<Sprite>("Sprites/Weapons/player");
 			curItemSlot.transform.GetChild(0).GetComponent<Image>().sprite=image[8];
 			curItemSlot.transform.GetChild(1).GetComponent<Text>().text=itm.itName;
+			
 	}
 	public void showInventory(){
 		setCurItem (npd.localPd.CurentWeapon);
@@ -62,7 +64,6 @@ public class Inventory : MonoBehaviour {
 			setCurItem(Take(n));
 			ShowItem(inventory[inventory.Count-1],inventory.Count-1);
 			npd.localPd.CurentWeapon=i;
-			Debug.Log(itm.GetComponent<RectTransform>().rect.width);
 			itm.transform.localScale=Vector3.one;
 			GameObject.Destroy(itm);
 		});
@@ -85,6 +86,8 @@ public class Inventory : MonoBehaviour {
 		invDoc = new XmlDocument ();
 		XmlNode root = invDoc.CreateElement("Inventory"); 
 		invDoc.AppendChild(root);
+		Debug.Log (npd.localPd.CurentWeapon.itName);
+		characters.ChangeCurWeapon (npd.localPd.i, npd.localPd.CurentWeapon);
 		foreach (Item item in inventory){
 			XmlNode itemNode = invDoc.CreateElement("Item");
 			itemNode=item.GetXml(invDoc);
