@@ -130,7 +130,8 @@ public class Lobby : MonoBehaviour
 
 		void sendDataToMaster ()
 		{
-				object[] data = pd.GetArray ();
+				//object[] data = pd.GetArray ();
+				object data = pd.GetArray ();
 				pv.RPC ("AddPlayersData", PhotonTargets.MasterClient, data);
 		}
 

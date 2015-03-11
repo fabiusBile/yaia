@@ -1,11 +1,17 @@
 <Inventory>
-  <Item name="Sword" type="sword" image="Weapons/sword" />
-  <Item name="Sword" type="sword" image="Weapons/sword" />
-  <Item name="Sword" type="sword" image="Weapons/sword" />
-  <Item name="Sword" type="sword" image="Weapons/sword" />
-  <Item name="asddsa" type="sword" image="Weapons/sword" />
-  <Item name="asddsa" type="sword" image="Weapons/sword" />
-  <Item name="asddsa" type="sword" image="Weapons/sword" />
-  <Item name="asddsa" type="sword" image="Weapons/sword" />
-  <Item name="Sword" type="sword" image="Weapons/sword" />
+  <Item name="Sword" type="sword" image="Weapons/sword">
+    <prefs stubDamage="100" minMultiplayer="0.1" maxMultiplayer="2" swingDamage="200" />
+  </Item>
+  <Item name="Sword" type="sword" image="Weapons/sword">
+    <prefs stubDamage="100" minMultiplayer="0.1" maxMultiplayer="2" swingDamage="200" />
+  </Item>
+  <Item name="Sword" type="sword" image="Weapons/sword">
+    <prefs stubDamage="100" minMultiplayer="0.1" maxMultiplayer="2" swingDamage="200" />
+  </Item>
+  <Item name="Sword" type="sword" image="Weapons/sword">
+    <prefs stubDamage="100" minMultiplayer="0.1" maxMultiplayer="2" swingDamage="200" />
+  </Item>
+  <Item name="Sword" type="sword" image="Weapons/sword">
+    <prefs stubDamage="100" minMultiplayer="0.1" maxMultiplayer="2" swingDamage="200" />
+  </Item>
 </Inventory>

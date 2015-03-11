@@ -17,7 +17,12 @@ public class Inventory : MonoBehaviour {
 
 	void OnGUI(){
 		if (GUI.Button(new Rect(0,0,200,20),"add")){
-			Add(new Item("Sword","sword","Weapons/sword"));
+			Hashtable prefs = new Hashtable();
+			prefs.Add ("swingDamage", 200);
+			prefs.Add ("stubDamage", 100);
+			prefs.Add ("minMultiplayer", 0.1);
+			prefs.Add ("maxMultiplayer", 2);
+			Add(new Item("Sword","sword","Weapons/sword",prefs));
 			Save();
 		}
 	}
@@ -74,12 +79,15 @@ public class Inventory : MonoBehaviour {
 			invDoc.Load ("Data/inventory.xml");
 		} catch (FileNotFoundException e) {
 			if (e!=null){
-
 				Save();
 			}
 		}
 		foreach (XmlNode item in invDoc.FirstChild.ChildNodes){
-			inventory.Add(new Item(item.Attributes["name"].Value.ToString(),item.Attributes["type"].Value.ToString(),item.Attributes["image"].Value.ToString()));
+			Hashtable prefs = new Hashtable();
+			foreach (XmlAttribute atr in item.FirstChild.Attributes){
+				prefs.Add (atr.Name,atr.Value);
+			}
+			inventory.Add(new Item(item.Attributes["name"].Value.ToString(),item.Attributes["type"].Value.ToString(),item.Attributes["image"].Value.ToString(),prefs));
 		}
 	}
 	public void Save(){

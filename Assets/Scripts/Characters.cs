@@ -12,7 +12,7 @@ public class Characters : MonoBehaviour
 		public GameObject createCharacter;
 		public GameObject characterInfo;
 		NetworkPlayersData npd;
-
+		
 		// Use this for initialization
 		public void Start ()
 		{
@@ -64,16 +64,16 @@ public class Characters : MonoBehaviour
 //						pd.data ["id"] = characters [i].Attributes ["id"].Value;
 //						pd.data ["name"] = characters [i].Attributes ["name"].Value;
 //						pd.data ["class"] = characters [i].Attributes ["class"].Value;
-						Item weapon = new Item (charsDoc,characters[i].FirstChild);
+						Item weapon = new Item (charsDoc, characters [i].FirstChild);
 //						Debug.Log (weapon.itName);
 //						pd.CurentWeapon=weapon;
-			XmlAttributeCollection atrs = characters[i].Attributes;
-			string id = characters[i].Attributes["id"].Value;
+						XmlAttributeCollection atrs = characters [i].Attributes;
+						string id = characters [i].Attributes ["id"].Value;
 
-			npd.localPd = new PlayersData(id,atrs["name"].Value,atrs["class"].Value,weapon);
-			npd.localPd.i=i;
+						npd.localPd = new PlayersData (id, atrs ["name"].Value, atrs ["class"].Value, weapon);
+						npd.localPd.i = i;
 						characterInfo.GetComponent<CharacterInfo> ().i = i;
-			characterInfo.GetComponent<CharacterInfo> ().init (npd.localPd.data ["name"].ToString (), npd.localPd.data ["class"].ToString ());
+						characterInfo.GetComponent<CharacterInfo> ().init (npd.localPd.data ["name"].ToString (), npd.localPd.data ["class"].ToString ());
 						characterInfo.SetActive (true);
 						gameObject.SetActive (false);
 				} else {
@@ -89,32 +89,57 @@ public class Characters : MonoBehaviour
 				characters [i].Attributes ["id"].Value = id;
 				characters [i].Attributes ["name"].Value = name;
 				characters [i].Attributes ["class"].Value = cls;
+				Hashtable prefs = new Hashtable ();
 				switch (cls) {
 				case "gunslinger":
 						characters [i].FirstChild.Attributes ["name"].Value = "mgun";
 						characters [i].FirstChild.Attributes ["type"].Value = "mgun";
 						characters [i].FirstChild.Attributes ["image"].Value = "Weapons/mgun";
+						prefs.Add ("swingDamage", 200);
+						prefs.Add ("stubDamage", 100);
+						prefs.Add ("minMultiplayer", 0.1);
+						prefs.Add ("maxMultiplayer", 2);
 						break;
 				case "warrior":
 						characters [i].FirstChild.Attributes ["name"].Value = "sword";
 						characters [i].FirstChild.Attributes ["type"].Value = "sword";
 						characters [i].FirstChild.Attributes ["image"].Value = "Weapons/sword";
+						prefs.Add ("swingDamage", 200);
+						prefs.Add ("stubDamage", 100);
+						prefs.Add ("minMultiplayer", 0.1);
+						prefs.Add ("maxMultiplayer", 2);
 						break;
 				default:
 						characters [i].FirstChild.Attributes ["name"].Value = "mgun";
 						characters [i].FirstChild.Attributes ["type"].Value = "mgun";
 						characters [i].FirstChild.Attributes ["image"].Value = "Weapons/mgun";
+						prefs.Add ("swingDamage", 200);
+						prefs.Add ("stubDamage", 100);
+						prefs.Add ("minMultiplayer", 0.1);
+						prefs.Add ("maxMultiplayer", 2);
 						break;
+				}
+				XmlNode prefsNode = characters [i].FirstChild.FirstChild;
+				foreach (object key in prefs.Keys) {
+						XmlAttribute atr = charsDoc.CreateAttribute (key.ToString ());
+						atr.Value = prefs [key].ToString ();
+						prefsNode.Attributes.Append (atr);
 				}
 				save ();
 		}
-		
-		public void ChangeCurWeapon(int i, Item itm){
-			characters [i].FirstChild.Attributes ["name"].Value = itm.itName;
-			characters [i].FirstChild.Attributes ["type"].Value = itm.type;
-			characters [i].FirstChild.Attributes ["image"].Value = itm.image;
-			save ();
+
+		//TODO написать нормальный универсальный метод для перевода оружия в XML 
+
+		public void ChangeCurWeapon (int i, Item itm)
+		{
+//			characters [i].FirstChild.Attributes ["name"].Value = itm.itName;
+//			characters [i].FirstChild.Attributes ["type"].Value = itm.type;
+//			characters [i].FirstChild.Attributes ["image"].Value = itm.image;
+			characters [i].RemoveChild(characters[i].FirstChild);
+			characters[i].AppendChild(itm.GetXml(charsDoc));
+				save ();
 		}
+
 		public void delete (int i)
 		{
 				foreach (XmlAttribute atr in characters[i].Attributes)

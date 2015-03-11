@@ -1,14 +1,22 @@
 <characters>
-  <char id="N4gxLx161428" name="CockSucker" class="gunslinger">
-    <Item name="mgun" type="mgun" image="Weapons/mgun" />
+  <char id="My&lt;d6k112331" name="фыв" class="gunslinger">
+    <Item name="Sword" type="sword" image="Weapons/sword">
+      <prefs stubDamage="100" minMultiplayer="0.1" maxMultiplayer="2" swingDamage="200" />
+    </Item>
   </char>
-  <char id="DVI&gt;6T161512" name="DickLicker" class="warrior">
-    <Item name="sword" type="sword" image="Weapons/sword" />
-  </char>
-  <char id="?fE=Up161430" name="kjhkjh" class="warrior">
-    <Item name="asddsa" type="sword" image="Weapons/sword" />
+  <char id="Spq`3n1216" name="DickLicker" class="warrior">
+    <Item name="sword" type="sword" image="Weapons/sword">
+      <prefs stubDamage="300" minMultiplayer="0.1" maxMultiplayer="2" swingDamage="200" />
+    </Item>
   </char>
   <char id="" name="" class="">
-    <Item name="" type="" image="" />
+    <Item name="" type="" image="">
+      <prefs />
+    </Item>
+  </char>
+  <char id="" name="" class="">
+    <Item name="" type="" image="">
+      <prefs />
+    </Item>
   </char>
 </characters>

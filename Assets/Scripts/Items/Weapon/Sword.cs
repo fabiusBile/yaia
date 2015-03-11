@@ -4,7 +4,6 @@ using System.Collections;
 public class Sword : MonoBehaviour
 {
 		weapon_controller weaponController;
-		public float fireDelay = 0.5f;
 		Animator anm;
 		PlayerControl pc;
 		bool prevFire;
