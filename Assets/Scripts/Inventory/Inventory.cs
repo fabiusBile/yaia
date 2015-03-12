@@ -64,6 +64,12 @@ public class Inventory : MonoBehaviour {
 		Sprite[] image = Resources.LoadAll<Sprite>("Sprites/Weapons/player");
 		itm.transform.GetChild(0).GetComponent<Image>().sprite=image[8];
 		itm.transform.GetChild(1).GetComponent<Text>().text=i.itName;
+
+		Text text = itm.transform.GetChild (2).GetChild (0).GetComponent<Text> ();
+		foreach (object key in i.prefs.Keys) {
+			text.text+=key.ToString()+": "+i.prefs[key].ToString()+"\n";
+		}
+		itm.transform.GetChild (2).SetParent (transform.root);
 		itm.GetComponent<Button>().onClick.AddListener(delegate{
 			inventory.Add(npd.localPd.CurentWeapon);
 			setCurItem(Take(n));
