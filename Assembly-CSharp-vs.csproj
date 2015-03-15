@@ -101,6 +101,7 @@
      <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
      <Compile Include="Assets\Scripts\Inventory\InventoryCellsScaler.cs" />
      <Compile Include="Assets\Scripts\Inventory\Item.cs" />
+     <Compile Include="Assets\Scripts\Inventory\ItemCell.cs" />
      <Compile Include="Assets\Scripts\Items\Weapon\Mgun.cs" />
      <Compile Include="Assets\Scripts\Items\Weapon\Sword.cs" />
      <Compile Include="Assets\Scripts\Items\bullet.cs" />

@@ -14,6 +14,7 @@ public class Inventory : MonoBehaviour {
 	public NetworkPlayersData npd;
 	public Transform curItemSlot;
 	public Characters characters;
+	public Transform infoPanel;
 
 	void OnGUI(){
 		if (GUI.Button(new Rect(0,0,200,20),"add")){
@@ -65,17 +66,20 @@ public class Inventory : MonoBehaviour {
 		itm.transform.GetChild(0).GetComponent<Image>().sprite=image[8];
 		itm.transform.GetChild(1).GetComponent<Text>().text=i.itName;
 
-		Text text = itm.transform.GetChild (2).GetChild (0).GetComponent<Text> ();
+		ItemCell itmcl = itm.GetComponent<ItemCell> ();
+		itmcl.panel = infoPanel.gameObject;
+		itmcl.panelText = infoPanel.GetChild (0).GetComponent<Text> ();
 		foreach (object key in i.prefs.Keys) {
-			text.text+=key.ToString()+": "+i.prefs[key].ToString()+"\n";
+			itmcl.info+=key.ToString()+": "+i.prefs[key].ToString()+"\n";
 		}
-		itm.transform.GetChild (2).SetParent (transform.root);
+
 		itm.GetComponent<Button>().onClick.AddListener(delegate{
 			inventory.Add(npd.localPd.CurentWeapon);
 			setCurItem(Take(n));
 			ShowItem(inventory[inventory.Count-1],inventory.Count-1);
 			npd.localPd.CurentWeapon=i;
 			itm.transform.localScale=Vector3.one;
+			itm.GetComponent<ItemCell>().ShowInfo(false);
 			GameObject.Destroy(itm);
 		});
 	}
