@@ -66,12 +66,12 @@ public class Inventory : MonoBehaviour {
 		itm.transform.GetChild(0).GetComponent<Image>().sprite=image[8];
 		itm.transform.GetChild(1).GetComponent<Text>().text=i.itName;
 
-		ItemCell itmcl = itm.GetComponent<ItemCell> ();
-		itmcl.panel = infoPanel.gameObject;
-		itmcl.panelText = infoPanel.GetChild (0).GetComponent<Text> ();
-		foreach (object key in i.prefs.Keys) {
-			itmcl.info+=key.ToString()+": "+i.prefs[key].ToString()+"\n";
-		}
+//		ItemCell itmcl = itm.GetComponent<ItemCell> ();
+//		itmcl.panel = infoPanel.gameObject;
+//		itmcl.panelText = infoPanel.GetChild (0).GetComponent<Text> ();
+//		foreach (object key in i.prefs.Keys) {
+//			itmcl.info+=key.ToString()+": "+i.prefs[key].ToString()+"\n";
+//		}
 
 		itm.GetComponent<Button>().onClick.AddListener(delegate{
 			inventory.Add(npd.localPd.CurentWeapon);
@@ -79,7 +79,7 @@ public class Inventory : MonoBehaviour {
 			ShowItem(inventory[inventory.Count-1],inventory.Count-1);
 			npd.localPd.CurentWeapon=i;
 			itm.transform.localScale=Vector3.one;
-			itm.GetComponent<ItemCell>().ShowInfo(false);
+//			itm.GetComponent<ItemCell>().ShowInfo(false);
 			GameObject.Destroy(itm);
 		});
 	}

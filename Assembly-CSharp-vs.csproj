@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_6_3;UNITY_4_6;UNITY_64;UNITY_STANDALONE_OSX;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_IL2CPP;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;UNITY5_SCRIPTING_IN_UNITY4;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_GAMECENTER;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_64;UNITY_STANDALONE_OSX;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_GAMECENTER;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Behaviour\CompilerMain.cs" />
+     <Compile Include="Assets\Behaviour\LuaScriptController.cs" />
      <Compile Include="Assets\LightTest.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\CustomTypes.cs" />
      <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\Enums.cs" />
@@ -92,6 +94,7 @@
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SupportLogger.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TestDontDestroyOnLoad.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Ability.cs" />
      <Compile Include="Assets\Scripts\CharacterInfo.cs" />
      <Compile Include="Assets\Scripts\Characters.cs" />
      <Compile Include="Assets\Scripts\CreateCharacter.cs" />
@@ -101,12 +104,12 @@
      <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
      <Compile Include="Assets\Scripts\Inventory\InventoryCellsScaler.cs" />
      <Compile Include="Assets\Scripts\Inventory\Item.cs" />
-     <Compile Include="Assets\Scripts\Inventory\ItemCell.cs" />
      <Compile Include="Assets\Scripts\Items\Weapon\Mgun.cs" />
      <Compile Include="Assets\Scripts\Items\Weapon\Sword.cs" />
      <Compile Include="Assets\Scripts\Items\bullet.cs" />
      <Compile Include="Assets\Scripts\Lobby.cs" />
      <Compile Include="Assets\Scripts\LobbyList.cs" />
+     <Compile Include="Assets\Scripts\LuaScript.cs" />
      <Compile Include="Assets\Scripts\MenusInit.cs" />
      <Compile Include="Assets\Scripts\Mobs\enemy_simple.cs" />
      <Compile Include="Assets\Scripts\Mobs\playerDetection.cs" />
@@ -124,14 +127,49 @@
      <Compile Include="Assets\Scripts\Spawn.cs" />
      <Compile Include="Assets\Scripts\backgrounds.cs" />
      <Compile Include="Assets\Scripts\playMenu.cs" />
+     <Compile Include="Assets\Tools\LuaCompiler.cs" />
+     <Compile Include="Assets\UniLua\ByteString.cs" />
+     <Compile Include="Assets\UniLua\Coder.cs" />
+     <Compile Include="Assets\UniLua\Common.cs" />
+     <Compile Include="Assets\UniLua\Do.cs" />
+     <Compile Include="Assets\UniLua\Dump.cs" />
+     <Compile Include="Assets\UniLua\LLex.cs" />
+     <Compile Include="Assets\UniLua\LuaAPI.cs" />
+     <Compile Include="Assets\UniLua\LuaAuxLib.cs" />
+     <Compile Include="Assets\UniLua\LuaBaseLib.cs" />
+     <Compile Include="Assets\UniLua\LuaBitLib.cs" />
+     <Compile Include="Assets\UniLua\LuaCoroLib.cs" />
+     <Compile Include="Assets\UniLua\LuaDebug.cs" />
+     <Compile Include="Assets\UniLua\LuaDebugLib.cs" />
+     <Compile Include="Assets\UniLua\LuaEncLib.cs" />
+     <Compile Include="Assets\UniLua\LuaFFILib.cs" />
+     <Compile Include="Assets\UniLua\LuaFile.cs" />
+     <Compile Include="Assets\UniLua\LuaFunc.cs" />
+     <Compile Include="Assets\UniLua\LuaIOLib.cs" />
+     <Compile Include="Assets\UniLua\LuaMathLib.cs" />
+     <Compile Include="Assets\UniLua\LuaObject.cs" />
+     <Compile Include="Assets\UniLua\LuaOsLib.cs" />
+     <Compile Include="Assets\UniLua\LuaPkgLib.cs" />
+     <Compile Include="Assets\UniLua\LuaState.cs" />
+     <Compile Include="Assets\UniLua\LuaStrLib.cs" />
+     <Compile Include="Assets\UniLua\LuaTable.cs" />
+     <Compile Include="Assets\UniLua\LuaTableLib.cs" />
+     <Compile Include="Assets\UniLua\OpCodes.cs" />
+     <Compile Include="Assets\UniLua\Parser.cs" />
+     <Compile Include="Assets\UniLua\TagMethod.cs" />
+     <Compile Include="Assets\UniLua\ULDebug.cs" />
+     <Compile Include="Assets\UniLua\Undump.cs" />
+     <Compile Include="Assets\UniLua\Util.cs" />
+     <Compile Include="Assets\UniLua\VM.cs" />
      <None Include="Assets\Plugins\release_history.txt" />
+     <None Include="Assets\Resources\Shader\Sprite.shader" />
      <None Include="Assets\Photon Unity Networking\readme.txt" />
      <None Include="Assets\Photon Unity Networking\changelog.txt" />
  <Reference Include="UnityEngine.UI">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.3/UnityEngine.UI.dll</HintPath>
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>/Users/fabius/Documents/yaia/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>/Users/Dock/Documents/yaia/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
