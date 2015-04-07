@@ -45,7 +45,10 @@ public class PlayerControl : MonoBehaviour
 		public bool AttackAnimPlayed;
 		public bool AttackCharging;
 		public bool AttackCharged;
-
+		Ability test;
+		void Start(){
+		test = new Ability ("test",gameObject);
+		}
 		void Awake ()
 		{
 				// Setting up references.
@@ -96,6 +99,7 @@ public class PlayerControl : MonoBehaviour
 						}
 						if (Input.GetButton ("Use")) {
 								//Если круг чего-то коснулся
+								test.execute();
 								if (itemHit != null) {
 										if (!UseBar.enabled) {
 												UseBar.enabled = true;

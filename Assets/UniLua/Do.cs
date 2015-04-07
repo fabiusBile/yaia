@@ -7,7 +7,6 @@ namespace UniLua
 	using ULDebug = UniLua.Tools.ULDebug;
 	using InstructionPtr = Pointer<Instruction>;
 	using Exception = System.Exception;
-
 	public class LuaRuntimeException : Exception
 	{
 		public ThreadStatus ErrCode { get; private set; }
@@ -22,6 +21,7 @@ namespace UniLua
 	{
 		internal void D_Throw( ThreadStatus errCode )
 		{
+			UnityEngine.Debug.Log (errCode);
 			throw new LuaRuntimeException( errCode );
 		}
 
