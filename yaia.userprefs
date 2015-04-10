@@ -1,11 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Ability.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Inventory/ItemCell.cs">
     <Files>
-      <File FileName="Assets/Scripts/LuaScript.cs" Line="39" Column="1" />
-      <File FileName="Assets/Scripts/Ability.cs" Line="35" Column="1" />
-      <File FileName="Assets/Scripts/Player/PlayerControl.cs" Line="50" Column="28" />
-      <File FileName="Assets/UniLua/LuaAPI.cs" Line="16" Column="3" />
+      <File FileName="Assets/Scripts/Inventory/Inventory.cs" Line="82" Column="49" />
+      <File FileName="Assets/Scripts/Inventory/ItemCell.cs" Line="19" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
