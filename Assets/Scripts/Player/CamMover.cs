@@ -9,7 +9,7 @@ public class CamMover : MonoBehaviour {
 	void Start () {
 		nextPos.z = transform.position.z;
 		Player = transform.root;
-		Player.GetComponent<PlayerControl> ().cam = transform.GetChild (0).camera;
+		Player.GetComponent<PlayerControl> ().cam = transform.GetChild (0).GetComponent<Camera>();
 		transform.parent = null;
 	}
 	

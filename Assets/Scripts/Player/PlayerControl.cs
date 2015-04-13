@@ -155,13 +155,13 @@ public class PlayerControl : MonoBehaviour
 								h = Input.GetAxis ("Horizontal");
 						}
 						
-						anim.SetFloat ("Speed", Mathf.Abs (rigidbody2D.velocity.x));
-						if (h * rigidbody2D.velocity.x < maxSpeed)
-								rigidbody2D.AddForce (Vector2.right * h * moveForce);
+						anim.SetFloat ("Speed", Mathf.Abs (GetComponent<Rigidbody2D>().velocity.x));
+						if (h * GetComponent<Rigidbody2D>().velocity.x < maxSpeed)
+								GetComponent<Rigidbody2D>().AddForce (Vector2.right * h * moveForce);
 						// If the player's horizontal velocity is greater than the maxSpeed...
-						if (Mathf.Abs (rigidbody2D.velocity.x) > maxSpeed)
+						if (Mathf.Abs (GetComponent<Rigidbody2D>().velocity.x) > maxSpeed)
 						// ... set the player's velocity to the maxSpeed in the x axis.
-								rigidbody2D.velocity = new Vector2 (Mathf.Sign (rigidbody2D.velocity.x) * maxSpeed, rigidbody2D.velocity.y);
+								GetComponent<Rigidbody2D>().velocity = new Vector2 (Mathf.Sign (GetComponent<Rigidbody2D>().velocity.x) * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 						
 						// If the player should jump...
 						if (jump) {
@@ -170,7 +170,7 @@ public class PlayerControl : MonoBehaviour
 
 								// Play a random jump audio clip.
 								// Add a vertical force to the player.
-								rigidbody2D.AddForce (new Vector2 (0f, jumpForce));
+								GetComponent<Rigidbody2D>().AddForce (new Vector2 (0f, jumpForce));
 
 								// Make sure the player can't jump again until the jump conditions from Update are satisfied.
 								jump = false;
@@ -179,7 +179,7 @@ public class PlayerControl : MonoBehaviour
 						}
 						//Поворот
 						if (cam != null) {
-								Ray ray = cam.camera.ScreenPointToRay (Input.mousePosition);
+								Ray ray = cam.GetComponent<Camera>().ScreenPointToRay (Input.mousePosition);
 								RaycastHit hit;
 								if (Physics.Raycast (ray, out hit, Mathf.Infinity)) {
 										//Разница между координатами игрока и курсора
@@ -218,7 +218,7 @@ public class PlayerControl : MonoBehaviour
 		[RPC]
 		void Respawn ()
 		{
-				rigidbody2D.MovePosition(checkpoint.position);
+				GetComponent<Rigidbody2D>().MovePosition(checkpoint.position);
 				transform.GetComponent<hitpoints> ().hp = 10f;
 				unstunning = false;
 				stunned = false;
