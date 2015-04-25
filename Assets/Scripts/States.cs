@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Ability : MonoBehaviour {
+public class States : MonoBehaviour {
 
-	struct ability{
-		string name;
-		string reqClass;
-		int minLvl;
+	const int PERIODICAL=111;
+	const int ON_ATTACK=222;
+
+	struct state{
+		int times;
+		int 
 	}
 
 	// Use this for initialization

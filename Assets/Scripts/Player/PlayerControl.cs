@@ -95,6 +95,7 @@ public class PlayerControl : MonoBehaviour
 								itemHit = Physics2D.OverlapCircle (transform.position, useRadius, bitmask);
 						}
 						if (Input.GetButton ("Use")) {
+								Ability.Use(gameObject,"Jump");
 								//Если круг чего-то коснулся
 								if (itemHit != null) {
 										if (!UseBar.enabled) {
