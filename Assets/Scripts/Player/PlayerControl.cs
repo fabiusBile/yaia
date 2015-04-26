@@ -35,7 +35,7 @@ public class PlayerControl : MonoBehaviour
 		float cdToResp = 60f;
 		public Transform checkpoint;
 		Text MainMessage;
-		hitpoints Hp;
+		public hitpoints Hp;
 		Text healthText;
 		Image healthBar;
 		public Image UseBar;
